@@ -1,0 +1,1 @@
+// To control the way stories are rendered and add global decorators and parameters
