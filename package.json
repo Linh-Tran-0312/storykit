@@ -1,0 +1,32 @@
+{
+  "name": "storykit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "story": "storybook dev -p 4000",
+    "build-story": "storybook build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.2.8",
+    "@storybook/react": "^8.2.8",
+    "@storybook/react-vite": "^8.2.8",
+    "@types/styled-components": "^5.1.34",
+    "@vitejs/plugin-react": "^4.3.1",
+    "esbuild": "^0.23.0",
+    "rollup": "^4.20.0",
+    "storybook": "^8.2.8",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0",
+    "vite-tsconfig-paths": "^5.0.1"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "styled-components": "^6.1.12"
+  }
+}

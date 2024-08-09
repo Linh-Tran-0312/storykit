@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      // This flag must be true for referenced projects 
+      "composite": true,
+      "module": "ESNext",
+      "moduleResolution": "Node",
+      "allowSyntheticDefaultImports": true
+    },
+    // This section specifies which files should be included in the TypeScript project.
+    "include": ["vite.config.ts"]
+  }
+  
