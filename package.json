@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "story": "storybook dev -p 4000",
+    "story": "storybook dev -p 6006",
     "build-story": "storybook build"
   },
   "keywords": [],

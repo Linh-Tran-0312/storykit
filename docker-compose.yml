@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  storykit:
+    container_name: storykit
+    image: node:20-alpine
+    user: node
+    build: 
+      context: .
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - 6006:6006
+    stdin_open: true
+    tty: true
