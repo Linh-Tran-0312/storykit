@@ -5,7 +5,9 @@
   "main": "dist/esm/src/components/index.js",
   "module": "dist/esm/src/components/index.js",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "story": "storybook dev -p 6006",
     "build-story": "storybook build",
@@ -39,6 +41,7 @@
   "dependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "style-inject": "0.3.0",
     "styled-components": "^6.1.12"
   }
 }
