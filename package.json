@@ -5,6 +5,7 @@
   "main": "dist/esm/src/components/index.js",
   "module": "dist/esm/src/components/index.js",
   "type": "module",
+  "files": ["dist"],
   "scripts": {
     "story": "storybook dev -p 6006",
     "build-story": "storybook build",
