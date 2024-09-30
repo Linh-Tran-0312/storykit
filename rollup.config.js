@@ -22,6 +22,7 @@ export default {
         postcss({
             extensions: ['.css']
         }),
+        external({ includeDependencies: true }),
         typescript({
             tsconfig: './tsconfig.build.json',
             useTsconfigDeclarationDir: true // declaration files will be emitted in the declarationDir given in the tsconfig
