@@ -19,9 +19,7 @@ export default {
         babel({exclude: 'node_modules/**'}),
         resolve({extensions}),
         commonjs(),
-        postcss({
-            extensions: ['.css']
-        }),
+        postcss(),
         external({ includeDependencies: true }),
         typescript({
             tsconfig: './tsconfig.build.json',
