@@ -11,9 +11,6 @@ dependencies:
   react-dom:
     specifier: 18.3.1
     version: 18.3.1(react@18.3.1)
-  style-inject:
-    specifier: 0.3.0
-    version: 0.3.0
   styled-components:
     specifier: ^6.1.12
     version: 6.1.12(react-dom@18.3.1)(react@18.3.1)
@@ -5827,6 +5824,7 @@ packages:
 
   /style-inject@0.3.0:
     resolution: {integrity: sha512-IezA2qp+vcdlhJaVm5SOdPPTUu0FCEqfNSli2vRuSIBbu5Nq5UvygTk/VzeCqfLz2Atj3dVII5QBKGZRZ0edzw==}
+    dev: true
 
   /styled-components@6.1.12(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-n/O4PzRPhbYI0k1vKKayfti3C/IGcPf+DqcrOB7O/ab9x4u/zjqraneT5N45+sIe87cxrCApXM8Bna7NYxwoTA==}
