@@ -11,7 +11,7 @@ const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 export default {
     input: './src/components/index.ts',
     output: [{
-        format: 'es', // ES module output,
+        format: 'esm', // ES module output,
         preserveModules: true, // this mode will create separate chunks for all modules using the original module names as file names
         dir: 'dist/esm',
     }],
@@ -19,6 +19,8 @@ export default {
         babel({exclude: 'node_modules/**'}),
         resolve({extensions}),
         commonjs(),
+        svg(),
+        json(),
         postcss(),
         external({ includeDependencies: true }),
         typescript({

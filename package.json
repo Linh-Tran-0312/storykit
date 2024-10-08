@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/esm/src/components/index.js",
   "module": "dist/esm/src/components/index.js",
+  "jsnext:main": "dist/esm/src/components/index.js",
   "type": "module",
   "files": [
     "dist"
