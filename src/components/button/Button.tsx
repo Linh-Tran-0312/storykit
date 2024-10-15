@@ -2,7 +2,7 @@ import * as React from 'react';
 import './Button.css';
 
 type ButtonProps = {
-    variant: 'primary' | 'secondary';
+    variant: 'primary' | 'secondary' | 'error';
     children: React.ReactNode
 } 
 

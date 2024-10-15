@@ -8,7 +8,7 @@ const meta: Meta<typeof Button> = {
     title: 'Button Story',
     argTypes: {
         variant: {
-            options: ['primary', 'secondary']
+            options: ['primary', 'secondary', 'error']
         },
         children: {
             options: ['Button']
