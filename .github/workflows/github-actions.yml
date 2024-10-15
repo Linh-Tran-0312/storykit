@@ -28,14 +28,14 @@ jobs:
     runs-on: ubuntu-latest
     steps: Deploy to EC2
     uses: appleboy/ssh-action@v0.1.4
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USER }}
-        key: ${{ secrets.EC2_SSH_KEY }}
-        port: 22
-        script: |
-          cd /var/www/storykit
-          git pull origin main
-          pnpm install
-          pnpm run build-story
-          sudo systemctl reload nginx
+    with:
+      host: ${{ secrets.EC2_HOST }}
+      username: ${{ secrets.EC2_USER }}
+      key: ${{ secrets.EC2_KEY }}
+      port: 22
+      script: |
+        cd /var/www/storykit
+        git pull origin main
+        pnpm install
+        pnpm run build-story
+        sudo systemctl reload nginx
