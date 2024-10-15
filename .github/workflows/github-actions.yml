@@ -6,29 +6,28 @@ on:
       - main
 
 jobs:
-  # test-and-lint:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout Reposistory
-  #       uses: actions/checkout@v2
+  test-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Reposistory
+        uses: actions/checkout@v2
 
-  #     - name: Setup NodeJS
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: '18'
-  #     - name: Install pnpm
-  #       run: npm install -g pnpm
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install pnpm
+        run: npm install -g pnpm
 
-  #     - name: Install dependencies
-  #       run: pnpm install
+      - name: Install dependencies
+        run: pnpm install
       
-  #     - name: Run ESLint
-  #       run: pnpm run lint
+      - name: Run ESLint
+        run: pnpm run lint
   deploy: 
     runs-on: ubuntu-latest
     steps:
     - name: Deploy to EC2
-    # - uses: actions/checkout@v4
       env:
           PRIVATE_KEY: ${{ secrets.EC2_KEY }}
           HOSTNAME: ${{secrets.EC2_HOST}}
@@ -36,10 +35,10 @@ jobs:
       run: |
         echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
         ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
-          cd /var/www/storykit
-          git checkout main
-          git pull origin main
-          pnpm install
-          pnpm run build-story
+          cd /var/www/storykit &&
+          git checkout main &&
+          git pull origin main &&
+          pnpm install &&
+          pnpm run build-story &&
           sudo systemctl reload nginx
           '
