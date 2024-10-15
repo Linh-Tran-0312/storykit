@@ -7,7 +7,6 @@ type ButtonProps = {
 };
 
 const Button = ({ variant, children }: ButtonProps) => {
-    const a = 2;
   return (
     <button className={`btn btn-default btn-${variant}`}>{children}</button>
   );
