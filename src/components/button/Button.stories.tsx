@@ -19,7 +19,7 @@ const meta: Meta<typeof Button> = {
 export default meta;
 
 export const PrimaryButton: StoryFn<typeof Button> = () => {
-  return <Button variant='primary'>Primary</Button>;
+  return <Button  variant='primary' style={{width: 200}} onClick={() => console.log('ee')}>Primary</Button>;
 };
 export const Template: StoryObj<typeof Button> = {
   args: {
