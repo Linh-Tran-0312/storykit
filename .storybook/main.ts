@@ -16,26 +16,6 @@ const config: StorybookConfig = {
     docs: {
         autodocs: false,
     },
-    // async viteFinal(config) {
-    //     return {
-    //       ...config,
-    //       css: {
-    //         preprocessorOptions: {
-    //           less: {
-    //             javascriptEnabled: true,
-    //             additionalData: '@root-entry-name: default;',
-    //           },
-    //         },
-    //       },
-    //       resolve: {
-    //         alias: {
-    //           videojs: 'video.js',
-    //           RecordRTC: 'recordrtc',
-    //         },
-    //       },
-    //       plugins: [...config.plugins, tsconfigPaths()],
-    //     };
-    //   },
 };
  
 export default config;
