@@ -29,7 +29,8 @@
       "declaration": true,
       // Prevents the compiler from emitting JavaScript files. This is often used when TypeScript is being used for type-checking only.
       "noEmit": true,
-      "jsx": "react"
+      "jsx": "react",
+      "types": ["node", "jest", "@testing-library/jest-dom"]
     },
     "include": ["src"],
     "references": [
