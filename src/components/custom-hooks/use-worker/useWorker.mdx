@@ -1,0 +1,17 @@
+{/* useWorker.mdx */}
+
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as useWorkerStories from './useWorker.stories';
+
+<Meta of={useWorkerStories} />
+
+# useWorker hook usage
+
+useWorker is a custom hook that enable you use worker API seamlessly
+```javascript
+    const calculateSum = () => {
+        return 1000*1000
+    }
+    const result = await useWorker(calculateSum)
+```
