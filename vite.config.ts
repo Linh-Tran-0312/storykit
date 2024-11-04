@@ -6,12 +6,12 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
     plugins: [react(),tsconfigPaths()],
-    // optimizeDeps: {
-    //     esbuildOptions: {
-    //       // Node.js global to browser globalThis
-    //       define: {
-    //         global: 'globalThis',
-    //       },
-    //     },
-    // },
+    optimizeDeps: {
+        esbuildOptions: {
+          // Node.js global to browser globalThis
+          define: {
+            global: 'globalThis',
+          },
+        },
+    },
 })

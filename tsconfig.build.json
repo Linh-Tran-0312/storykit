@@ -5,7 +5,8 @@
       "paths": {
         "*": [
           "src/*"
-        ]
+        ],
+        "tslib": ["node_modules/tslib/tslib.d.ts"]
       },
       "noImplicitAny": false,
       "useDefineForClassFields": true,
@@ -23,7 +24,7 @@
       "isolatedModules": true,
       "jsx": "react",
       "declaration": true,
-      "declarationDir": "./dist/esm/src/components/"
+      "declarationDir": "./dist/esm/src/components/",
     },
     "include": ["src/**/*"],
     "exclude": [

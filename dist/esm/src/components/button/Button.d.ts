@@ -1,8 +1,8 @@
 import * as React from 'react';
 import './Button.css';
-type ButtonProps = {
-    variant: 'primary' | 'secondary';
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    variant: 'primary' | 'secondary' | 'error';
     children: React.ReactNode;
-};
-declare const Button: ({ variant, children }: ButtonProps) => JSX.Element;
+}
+declare const Button: React.FC<ButtonProps>;
 export default Button;
