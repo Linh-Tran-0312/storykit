@@ -1,0 +1,29 @@
+{/* useLocalStorageState */}
+import { Canvas, Meta, Story } from '@storybook/blocks';
+
+<Meta title="Custom Hooks/useLocalStorageState"/>
+
+# useLocalStorageState
+
+The `useLocalStorageState` hook is a custom React hook that provides a simple way to sync a state variable with localStorage. 
+It allows you to persist data across browser sessions and manage state just like a regular useState hook, but with the added 
+benefit of storage persistence.
+
+## Type
+```typescript
+    useLocalStorageState<T>(key: string, defaultValue?: T) => [T, (value: T) => void]
+```
+#### Parameters:
+- `key: string`: The key under which the value will be stored in localStorage.
+- `defaultValue?: T`: An optional default value that will be set if no value exists in localStorage.
+#### Return Value:
+`[state, setState]`: A tuple where:
+- `state`: The current value of the state, retrieved from localStorage or set to the default value.
+- `setState`: A function to update the state and localStorage.
+## Usage
+This hook is useful for managing persistent application state, such as user preferences, form data, or theme settings, across page reloads.
+```javascript
+    
+    const [language, setLanguage] = useLocalStorageState("language");
+```
+
