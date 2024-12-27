@@ -1,0 +1,31 @@
+{/* usePrevious */}
+import { Canvas, Meta, Story } from '@storybook/blocks';
+
+<Meta title="Custom Hooks/usePrevious"/>
+
+# usePrevious
+
+The `usePrevious` hook is a custom React hook that allows you to track the previous value of a state or prop across renders.
+It helps in scenarios where you need to compare the current value with its previous value, such as handling transitions, animations,
+or conditionally triggering actions based on changes.
+
+## Type
+```typescript
+    usePrevious<T>(value: T) => T|undefined
+```
+#### Parameters:
+- `value: T`: The current value (state or prop) that you want to track.
+
+#### Return Value:
+
+- `T | undefined`: The previous value of the provided value, or undefined if it's the first render.
+## Usage
+This hook is useful when you need to access the previous state or prop value to compare it with the current one or make decisions based on changes.
+
+
+```javascript
+const [stage,setStage] = useState<'todo'|'in progress'|'pending'|'canceled'>('todo');
+
+const previousStage = usePrevious(stage);
+```
+
