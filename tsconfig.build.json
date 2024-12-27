@@ -24,7 +24,7 @@
       "isolatedModules": true,
       "jsx": "react",
       "declaration": true,
-      "declarationDir": "./dist/esm/src/components/",
+      "declarationDir": "./dist/esm/src/",
     },
     "include": ["src/**/*"],
     "exclude": [

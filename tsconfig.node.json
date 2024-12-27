@@ -4,7 +4,7 @@
       "composite": true,
       "module": "ESNext",
       "moduleResolution": "Node",
-      "allowSyntheticDefaultImports": true
+      "allowSyntheticDefaultImports": true,
     },
     // This section specifies which files should be included in the TypeScript project.
     "include": ["vite.config.ts"]
