@@ -1,0 +1,50 @@
+{/* useDebounceState */}
+import { Canvas, Meta, Story } from '@storybook/blocks';
+
+<Meta title="Custom Hooks/useDebounceState"/>
+
+# useDebounceState
+The `useDebounceState` hook is a custom React hook designed to manage state with debouncing behavior. 
+
+## Type
+```typescript
+    useDebounceState<T>(initialValue: T, debounceTime?: number) => { 
+        state: T,
+        debouncedState: T,
+        setState: (value: T) => void
+    }
+```
+#### Parameters:
+- `initialValue: T`: The initial value of the state.
+- `debounceTime?: number`: The optional debounce delay in milliseconds. If not provided, it defaults to 500ms.
+#### Return Value:
+- `state: T`: The current value of the state.
+- `debounceState: T`: The debounced version of the state, updated only after the specified delay.
+- `setState: (value: T) => void`: A function to update the immediate state.
+## Usage
+This hook is ideal for situations where you need to control the rate of state updates and perform actions after a delay, 
+such as making API calls after the user stops typing in a search input field.
+```javascript
+    
+import useDebounceState from './useDebounceState';
+
+function SearchComponent() {
+  const { state, debouncedState, setState } = useDebounceState('', 300);
+
+  useEffect(() => {
+    // Trigger API call or other side-effect based on debouncedState
+    console.log('Searching for:', debouncedState);
+  }, [debouncedState]);
+
+  return (
+    <input
+      type="text"
+      value={state}
+      onChange={(e) => setState(e.target.value)}
+      placeholder="Search..."
+    />
+  );
+}
+
+```
+
