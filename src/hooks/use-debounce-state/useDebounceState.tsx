@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const DEFAULT_DEBOUNCE_TIME = 500;
 function useDebounceState<T>(initialValue: T, debouncedTime?: number) {

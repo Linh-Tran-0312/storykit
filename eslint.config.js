@@ -6,7 +6,7 @@ import tseslint from 'typescript-eslint';
 import prettierConfig from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
 export default tseslint.config(
-  { ignores: ['dist','storybook-static'] },
+  { ignores: ['dist','storybook-static', 'src/**/*.spec.ts'] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended, prettierConfig],
     files: ['src/**/*.{ts,tsx,js,jxs}'],
@@ -15,7 +15,8 @@ export default tseslint.config(
       globals: globals.browser,
     },
     linterOptions: {
-      noInlineConfig: false
+      noInlineConfig: false,
+      
     },
     plugins: {
       'react-hooks': reactHooks,
@@ -40,6 +41,8 @@ export default tseslint.config(
           trailingComma: 'es5',
         },
       ],
+      'prefer-const': 'off',
+      '@typescript-eslint/no-explicit-any': ['error', { ignoreRestArgs: true }],
     },
   },
 )
