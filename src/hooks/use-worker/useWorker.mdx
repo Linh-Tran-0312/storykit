@@ -1,0 +1,74 @@
+{/* useWorker.mdx */}
+
+import { Canvas, Meta, Story } from '@storybook/blocks';
+
+<Meta title="Custom Hooks/useWorker"/>
+
+# useWorker
+
+The `useWorker` hook is a custom React hook that simplifies the process of utilizing Web Workers to offload expensive computations to a separate thread.
+ This helps improve application performance by preventing blocking of the main UI thread. The hook creates a worker from a provided function and 
+  offers a clean API to interact with it, including sending messages and terminating the worker.
+
+
+## Type
+```typescript
+useWorker<T>(fn: (...arg) => T): UseWorkerReturnProps<T> 
+
+type UseWorkerReturnProps<T> = {
+  status: STATUS;
+  terminate: () => void;
+  workerHandler: (arg?: any) => Promise<T>;
+}
+
+enum STATUS {
+  LOADING = 'loading',
+  IDLE = 'idle',
+}
+
+```
+#### Parameters:
+- `fn: (arg?: any) => any`: The function to be executed in the Web Worker, it must be a non-void function.
+
+#### Return Value:
+
+`UseWorkerReturnProps<T>`: An object containing the following properties:
+- `status: STATUS`: Indicates the current status of the worker ('idle' or 'loading').
+- `terminate: () => void`: A function to terminate the worker.
+- `workerHandler: (arg?: any) => Promise<T>`: A function works on behalf of the `fn` function that accepts parameters of the `fn` function. 
+The role is to send data to the worker and receive the computed result as a promise.
+
+## Usage
+This hook is ideal for scenarios where heavy computations need to be performed without blocking the UI, such as processing large datasets or 
+performing complex calculations.
+
+```javascript
+const countFromZeroTo = (limit) => {
+  let count = 0;
+  for (let i = 0; i < limit; i++) {
+    count += 1;
+  }
+  return count;
+};
+
+const Component = () => {
+    const { status, workerHandler } = useWorker<number>(countFromZeroTo);
+    const startHeavyTask = async () => {
+        const result = await workerHandler(20000000);
+    };
+    ...
+};
+
+```
+## Limitations
+- The worker function cannot import external modules or dependencies. 
+If additional logic or libraries are required, they must be explicitly included in the serialized function.
+```javascript
+function workerFunction() {
+  const helper = () => console.log("Helper function");
+  helper();
+}
+
+```
+
+
