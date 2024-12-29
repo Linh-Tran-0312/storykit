@@ -1,42 +1,54 @@
 {
-    "compilerOptions": {
-      "target": "ESNext",
-      "baseUrl": ".",
-      "paths": {
-        "*": ["src/*"]
-      },
-      "noImplicitAny": false,
-      "strictNullChecks": false,
-      "useDefineForClassFields": true,
-      "lib": ["DOM", "DOM.Iterable", "ESNext"],
-      // Allows JavaScript files to be compiled. This is useful when you want to gradually migrate a JavaScript codebase to TypeScript.
-      "allowJs": true,
-      "skipLibCheck": true,
-      "esModuleInterop": true,
-      // Allows default imports from modules with no default export. This is useful for interoperability with CommonJS modules that don’t have a default export.
-      "allowSyntheticDefaultImports": true,
-      "strict": true,
-      // Ensures that file names are consistently cased across the project, preventing issues related to case sensitivity, especially in environments where the file system is case-insensitive.
-      "forceConsistentCasingInFileNames": true,
-      "module": "ESNext",
-      // Specifies how modules are resolved. "Node" mimics Node.js' module resolution strategy, which is common in many JavaScript projects.
-      "moduleResolution": "Node",
-      // Allows importing JSON files as modules. This will provide TypeScript with type information about the JSON structure.
-      "resolveJsonModule": true,
-      // Ensures each file can be transpiled independently, without relying on information from other files. This is useful for tools like Babel that transpile TypeScript in a similar way.
-      "isolatedModules": true,
-      // Generates corresponding .d.ts declaration files for the TypeScript files, providing type information for consumers of the library or package.
-      "declaration": true,
-      // Prevents the compiler from emitting JavaScript files. This is often used when TypeScript is being used for type-checking only.
-      "noEmit": true,
-      "jsx": "react",
-      "types": ["node", "jest", "@testing-library/jest-dom"]
+  "compilerOptions": {
+    "target": "ESNext",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "src/*"
+      ]
     },
-    "include": ["src"],
-    "references": [
-      {
-        "path": "./tsconfig.node.json"
-      }
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "useDefineForClassFields": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    // Allows JavaScript files to be compiled. This is useful when you want to gradually migrate a JavaScript codebase to TypeScript.
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    // Allows default imports from modules with no default export. This is useful for interoperability with CommonJS modules that don’t have a default export.
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    // Ensures that file names are consistently cased across the project, preventing issues related to case sensitivity, especially in environments where the file system is case-insensitive.
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    // Specifies how modules are resolved. "Node" mimics Node.js' <= v10 module resolution strategy, which is common in many JavaScript projects.
+    "moduleResolution": "node",
+    // Allows importing JSON files as modules. This will provide TypeScript with type information about the JSON structure.
+    "resolveJsonModule": true,
+    // Ensures each file can be transpiled independently, without relying on information from other files. This is useful for tools like Babel that transpile TypeScript in a similar way.
+    "isolatedModules": true,
+    // Generates corresponding .d.ts declaration files for the TypeScript files, providing type information for consumers of the library or package.
+    "declaration": true,
+    // Prevents the compiler from emitting JavaScript files. This is often used when TypeScript is being used for type-checking only.
+    "noEmit": true,
+    "jsx": "react",
+    "types": [
+      "node",
+      "jest",
+      "@testing-library/jest-dom"
     ]
-  }
-  
+  },
+  "include": [
+    "src",
+    ".storybook"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}
