@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from '@storybook/react';
 import { Button } from 'components/common-components/button';
 import React from 'react';
-import useWorker from './useWorker';
+import useWorker, { STATUS } from './useWorker';
 //👇 This default export determines where your story goes in the story list
 const meta: Meta = {
   title: 'Custom Hooks/useWorker',
@@ -71,7 +71,9 @@ export const Playground: StoryFn = () => {
             Start count
           </Button>
           <div className='inline mx-2'>
-            {isWorkerUsed && status === 'loading' ? 'Worker running...' : ''}{' '}
+            {isWorkerUsed && status === STATUS.LOADING
+              ? 'Worker running...'
+              : ''}{' '}
             {isCountDone ? 'Count Done ✅' : ''}
           </div>
         </div>

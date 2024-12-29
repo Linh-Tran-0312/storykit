@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export const createWorkerFile = (fn: (...arg) => unknown) => {
+export const createWorkerFile = (fn: (...arg: any[]) => unknown) => {
   const jsCode = `
    const fn = ${fn.toString()};
    self.addEventListener('message', (event) => {
@@ -19,7 +19,7 @@ export const createWorkerFile = (fn: (...arg) => unknown) => {
   return url;
 };
 
-enum STATUS {
+export enum STATUS {
   LOADING = 'loading',
   IDLE = 'idle',
 }
@@ -27,7 +27,7 @@ enum STATUS {
 type UseWorkerReturnProps<T> = {
   status: STATUS;
   terminate: () => void;
-  workerHandler: (...arg) => Promise<T>;
+  workerHandler: (...arg: any[]) => Promise<T>;
 };
 export function useWorker<T>(
   fn: (...arg: any[]) => T
