@@ -22,7 +22,7 @@ jobs:
         run: pnpm run lint
       - name: Run unit test
         run: pnpm run test
-deploy:
+  deploy:
     environment:
       name: github-pages
       url: https://linh-tran-0312.github.io/storykit/
