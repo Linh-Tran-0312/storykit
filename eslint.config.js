@@ -6,7 +6,7 @@ import tseslint from 'typescript-eslint';
 import prettierConfig from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
 export default tseslint.config(
-  { ignores: ['dist','storybook-static', 'src/**/*.spec.ts'] },
+  { ignores: ['dist','storybook-static']},
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended, prettierConfig],
     files: ['src/**/*.{ts,tsx,js,jxs}'],
@@ -43,6 +43,20 @@ export default tseslint.config(
       ],
       'prefer-const': 'off',
       '@typescript-eslint/no-explicit-any': ['error', { ignoreRestArgs: true }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_', 
+          varsIgnorePattern: '^_',
+        },
+      ],
     },
   },
+  {
+    files: ['src/**/*.spec.ts'],
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-require-imports': 'off',
+    }
+  }
 )
