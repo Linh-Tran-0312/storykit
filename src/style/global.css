@@ -1,0 +1,14 @@
+input {
+    border:1px solid  #E5D9F2 !important;
+    border-radius: 4px !important;
+    height: 32px !important;
+    outline: none !important;
+}
+
+input:focus, input:hover {
+    border:1px solid #CDC1FF !important;
+    outline: none;
+}
+code {
+    background-color: #F5EFFF !important;
+}
