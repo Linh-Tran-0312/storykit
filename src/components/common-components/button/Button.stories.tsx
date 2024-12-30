@@ -1,11 +1,10 @@
-import type { Meta, StoryObj, StoryFn } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
 
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof Button> = {
   component: Button,
-  title: 'Components/Button',
+  title: 'Components/Common/Button',
   argTypes: {
     variant: {
       options: ['primary', 'secondary', 'error'],
@@ -18,20 +17,9 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 
-export const PrimaryButton: StoryFn<typeof Button> = () => {
-  return (
-    <Button
-      variant='primary'
-      style={{ width: 200 }}
-      onClick={() => console.log('ee')}
-    >
-      Primary
-    </Button>
-  );
-};
 export const Template: StoryObj<typeof Button> = {
   args: {
     variant: 'secondary',
-    children: 'Secondary',
+    children: 'Button',
   },
 };
