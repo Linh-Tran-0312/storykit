@@ -16,17 +16,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - name: Install pnpm
-        run: npm install -g pnpm
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
       
       -name: Run Unit test
-        run: pnpm run test
+        run: npm run test
         
       - name: Run ESLint
-        run: pnpm run lint
+        run: npm run lint
   deploy: 
     runs-on: ubuntu-latest
     steps:
@@ -41,7 +39,7 @@ jobs:
           cd /var/www/storykit &&
           git checkout main &&
           git pull origin main &&
-          pnpm install &&
-          pnpm run build-story &&
+          npm install &&
+          npm run build-story &&
           sudo systemctl reload nginx
           '
