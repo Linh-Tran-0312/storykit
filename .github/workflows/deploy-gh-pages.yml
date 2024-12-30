@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - main
+      
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+ 
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
@@ -36,14 +42,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build
-        run: npm run build
+        run: npm run build-story
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist folder
-          path: './dist'
+          path: 'storybook-static'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
