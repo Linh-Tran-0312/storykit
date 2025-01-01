@@ -1,0 +1,38 @@
+{/* useMediaQuery */}
+import { Canvas, Meta, Story } from '@storybook/blocks';
+
+<Meta title="Custom Hooks/useMediaQuery"/>
+
+# useMediaQuery
+
+The `useMediaQuery` hook is a custom React hook that allows you to dynamically track the result of a CSS media query.
+It provides a simple way to determine whether the current viewport matches a specified media query and updates its value whenever the query 
+result change
+
+## Type
+```typescript
+    useMediaQuery<string>(query: string) => boolean
+```
+#### Parameters:
+- `query: string`: A string representing the CSS media query to be evaluated. For example, `(max-width: 768px)` or `(min-width: 1024px)`. 
+
+#### Return Value:
+
+- `matches: boolean`: Indicate whether the current viewport matches the input media query.
+## Usage
+
+
+```javascript
+
+function Example() {
+  const isLargeScreen = useMediaQuery('(min-width: 1024px)');
+
+  return (
+    <div>
+      {isLargeScreen ? <p>Large screen detected!</p> : <p>Small screen detected!</p>}
+    </div>
+  );
+}
+
+```
+
